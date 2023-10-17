@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Pokédex</h2>
+        <div class="icons">
+            <div class="search-bar">
+                <input type="text" id="search" name="search" placeholder="search by name or id" onchange="searchPokemon()">
+                <!-- <a id='search-button' type="button" href=""><i id='search-button' class="fa-solid fa-magnifying-glass"></i></a> -->
+                <i id='search-button' class="fa-solid fa-magnifying-glass" onclick="searchPokemon()"></i>
+            </div>
+            <span class="filter"><i class="fa-solid fa-sliders" onclick="toggleFilterSection()"></i></span>
+        </div>
+    </header>
+    <section class="results-section">
+        <div class="banner"><img src="images/cover-pokemon.png" alt="" ></div>
+        <div class="results-grid">
+        </div>
+    </section>
+    <div class="load-more-section">
+        <button type="button" class="load-more-button">Load More ...</button>
+    </div>
+    <div class="go-to-top">
+        <img class="pokeball" src="images/pokeball.gif" alt="" onclick="goToTop()">
+    </div>
+    <div class="preview-section hidden">
+        <i class="fa-solid fa-circle-xmark" onclick="closePreview()"></i>
+        <div class="preview-grid">
+            <div class="preview-image">
+                <img src="" alt="">
+            </div>
+            <div class="preview-stats">
+                <h3 class="preview-id"></h3>
+                <h2 class="preview-name"></h2>
+                <h2 class="preview-section-title">STATS</h2>
+                <div class="preview-stat-container">
+                    <div class="preview-stat-item">
+                        <span class="preview-stat-name">HP</span>
+                        <span class="preview-stat-value hp"></span>
+                    </div>
+                    <div class="preview-stat-item">
+                        <span class="preview-stat-name">Attack</span>
+                        <span class="preview-stat-value attack"></span>
+                    </div>
+                    <div class="preview-stat-item">
+                        <span class="preview-stat-name">S Attack</span>
+                        <span class="preview-stat-value s-attack"></span>
+                    </div>
+                    <div class="preview-stat-item">
+                        <span class="preview-stat-name">Speed</span>
+                        <span class="preview-stat-value speed"></span>
+                    </div>
+                    <div class="preview-stat-item">
+                        <span class="preview-stat-name">Defense</span>
+                        <span class="preview-stat-value defense"></span>
+                    </div>
+                    <div class="preview-stat-item">
+                        <span class="preview-stat-name">S Defense</span>
+                        <span class="preview-stat-value s-defense"></span>
+                    </div>
+                </div>
+                <h2 class="preview-section-title">VITALS</h2>
+                <div class="preview-vitals-container">
+                    <div class="preview-vitals-item">
+                        <span class="preview-vitals-name">Height</span>
+                        <span class="preview-vitals-value height"></span>
+                    </div>
+                    <div class="preview-vitals-item">
+                        <span class="preview-vitals-name">Weight</span>
+                        <span class="preview-vitals-value weight"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter-section hidden">
+        <i class="fa-solid fa-circle-xmark" onclick="toggleFilterSection()"></i>
+        <h2>Filters</h2>
+        <ul class="type-list">
+            <li type="button" class="type-item active" onclick="filterResults('all')">all</li>
+            <li class="type-item" onclick="filterResults('bug')">bug</li>
+            <li class="type-item" onclick="filterResults('dragon')">dragon</li>
+            <li class="type-item" onclick="filterResults('fairy')">fairy</li>
+            <li class="type-item" onclick="filterResults('fire')">fire</li>
+            <li class="type-item" onclick="filterResults('ghost')">ghost</li>
+            <li class="type-item" onclick="filterResults('ground')">ground</li>
+            <li class="type-item" onclick="filterResults('normal')">normal</li>
+            <li class="type-item" onclick="filterResults('psychic')">psychic</li>
+            <li class="type-item" onclick="filterResults('steel')">steel</li>
+            <li class="type-item" onclick="filterResults('dark')">dark</li>
+            <li class="type-item" onclick="filterResults('electric')">electric</li>
+            <li class="type-item" onclick="filterResults('fighting')">fighting</li>
+            <li class="type-item" onclick="filterResults('flying')">flying</li>
+            <li class="type-item" onclick="filterResults('grass')">grass</li>
+            <li class="type-item" onclick="filterResults('ice')">ice</li>
+            <li class="type-item" onclick="filterResults('poison')">poison</li>
+            <li class="type-item" onclick="filterResults('rock')">rock</li>
+            <li class="type-item" onclick="filterResults('water')">water</li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+    <script></script>
+</body>
+</html>
